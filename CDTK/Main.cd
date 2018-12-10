@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CTK.CTKInstaller">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAGAACAAAACAACAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>CTKInstaller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.BL">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="CTK.BL.StudentCard" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BL.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="CTK.BL.CourseCard" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BL.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IDAIotIQCIgaBiiIGkgyEKAAIiAAEECAAiIhDGgYMYo=</HashCode>
+      <FileName>BL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.DAL" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.Context">
+    <Position X="10.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="CTK.CourseStatus">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAA=</HashCode>
+      <FileName>CourseStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.4" />
+</ClassDiagram>

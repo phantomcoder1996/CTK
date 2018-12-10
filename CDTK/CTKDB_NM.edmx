@@ -1,0 +1,256 @@
+﻿<edmx:Edmx Version="4.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+<!-- EF Runtime content -->
+<edmx:Runtime>
+<!-- SSDL content -->
+<edmx:StorageModels>
+<Schema Namespace="CTKDB_NMModel.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BARCODE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="SID" Type="nvarchar" MaxLength="100" />
+          <Property Name="CID" Type="nvarchar" MaxLength="100" />
+          <Property Name="BC" Type="nvarchar" MaxLength="11" />
+          <Property Name="HSID" Type="nvarchar" MaxLength="6" />
+          <Property Name="HCID" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Courses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaximumExam" Type="int" />
+          <Property Name="MaximumClass" Type="int" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="MISFileID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'INFO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="INFO">
+          <Property Name="VER" Type="int" />
+          <Property Name="RELEASE" Type="datetime" />
+          <Property Name="SIGNATURE" Type="image" />
+        </EntityType>-->
+        <EntityType Name="Master">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseID" Type="nvarchar" MaxLength="100" />
+          <Property Name="StudentID" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExamMark" Type="int" />
+          <Property Name="SSID" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" MaxLength="100" />
+          <Property Name="MISID" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ResultStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Year" Type="nvarchar" MaxLength="100" />
+          <Property Name="Class" Type="nvarchar" MaxLength="100" />
+          <Property Name="Department" Type="nvarchar" MaxLength="100" />
+          <Property Name="ActivityStatus" Type="bit" />
+          <Property Name="FinalStatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Class" Type="nvarchar" MaxLength="100" />
+          <Property Name="AcademicYear" Type="nvarchar" MaxLength="100" />
+          <Property Name="StudentID" Type="nvarchar" MaxLength="100" />
+          <Property Name="AcademicClass" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="VER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Major" Type="int" Nullable="false" />
+          <Property Name="Minor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CTKDB_NMModelStoreContainer">
+          <EntitySet Name="BARCODE" EntityType="Self.BARCODE" store:Type="Tables" />
+          <EntitySet Name="Courses" EntityType="Self.Courses" store:Type="Tables" />
+          <EntitySet Name="Master" EntityType="Self.Master" store:Type="Tables" />
+          <EntitySet Name="ResultStatus" EntityType="Self.ResultStatus" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" store:Type="Tables" />
+          <EntitySet Name="VER" EntityType="Self.VER" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+<!-- CSDL content -->
+<edmx:ConceptualModels>
+<Schema Namespace="CTKDB_NMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CTKDB_NMEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="BARCODE" EntityType="CTKDB_NMModel.BARCODE" />
+    <EntitySet Name="Courses" EntityType="CTKDB_NMModel.Courses" />
+    <EntitySet Name="Master" EntityType="CTKDB_NMModel.Master" />
+    <EntitySet Name="ResultStatus" EntityType="CTKDB_NMModel.ResultStatus" />
+    <EntitySet Name="Students" EntityType="CTKDB_NMModel.Students" />
+          <EntitySet Name="VER" EntityType="CTKDB_NMModel.VER" />
+  </EntityContainer>
+  <EntityType Name="BARCODE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BC" Type="String" MaxLength="11" Unicode="true" FixedLength="false" />
+    <Property Name="HSID" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
+    <Property Name="HCID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MaximumExam" Type="Int32" />
+    <Property Name="MaximumClass" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MISFileID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Master">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="StudentID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ExamMark" Type="Int32" />
+    <Property Name="SSID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MISID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ResultStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Class" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Department" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ActivityStatus" Type="Boolean" />
+    <Property Name="FinalStatus" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Class" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AcademicYear" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="StudentID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AcademicClass" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+  </EntityType>
+        <EntityType Name="VER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Major" Type="Int32" Nullable="false" />
+          <Property Name="Minor" Type="Int32" Nullable="false" />
+        </EntityType>
+</Schema>
+</edmx:ConceptualModels>
+<!-- C-S mapping content -->
+<edmx:Mappings>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CTKDB_NMModelStoreContainer" CdmEntityContainer="CTKDB_NMEntities">
+    <EntitySetMapping Name="BARCODE">
+      <EntityTypeMapping TypeName="CTKDB_NMModel.BARCODE">
+        <MappingFragment StoreEntitySet="BARCODE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="BC" ColumnName="BC" />
+          <ScalarProperty Name="HSID" ColumnName="HSID" />
+          <ScalarProperty Name="HCID" ColumnName="HCID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="CTKDB_NMModel.Courses">
+        <MappingFragment StoreEntitySet="Courses">
+                <ScalarProperty Name="MISFileID" ColumnName="MISFileID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MaximumExam" ColumnName="MaximumExam" />
+          <ScalarProperty Name="MaximumClass" ColumnName="MaximumClass" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master">
+      <EntityTypeMapping TypeName="CTKDB_NMModel.Master">
+        <MappingFragment StoreEntitySet="Master">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="ExamMark" ColumnName="ExamMark" />
+          <ScalarProperty Name="SSID" ColumnName="SSID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="MISID" ColumnName="MISID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultStatus">
+      <EntityTypeMapping TypeName="CTKDB_NMModel.ResultStatus">
+        <MappingFragment StoreEntitySet="ResultStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="ActivityStatus" ColumnName="ActivityStatus" />
+          <ScalarProperty Name="FinalStatus" ColumnName="FinalStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="CTKDB_NMModel.Students">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="AcademicYear" ColumnName="AcademicYear" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="AcademicClass" ColumnName="AcademicClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="VER">
+            <EntityTypeMapping TypeName="CTKDB_NMModel.VER">
+              <MappingFragment StoreEntitySet="VER">
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
+</edmx:Mappings>
+</edmx:Runtime>
+<!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+<edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+<Connection><DesignerInfoPropertySet><DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" /></DesignerInfoPropertySet></Connection>
+<edmx:Options><DesignerInfoPropertySet><DesignerProperty Name="ValidateOnBuild" Value="True" /><DesignerProperty Name="EnablePluralization" Value="False" /><DesignerProperty Name="IncludeForeignKeysInModel" Value="True" /><DesignerProperty Name="UseLegacyProvider" Value="False" /><DesignerProperty Name="CodeGenerationStrategy" Value="None" /></DesignerInfoPropertySet></edmx:Options>
+<edmx:Diagrams >
+      <Diagram DiagramId="022f25ad0e5345789faa457517768327" Name="Diagram1">
+        <EntityTypeShape EntityType="CTKDB_NMModel.BARCODE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTKDB_NMModel.Courses" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTKDB_NMModel.Master" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTKDB_NMModel.ResultStatus" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTKDB_NMModel.Students" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CTKDB_NMModel.VER" Width="1.5" PointX="5.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+</edmx:Designer></edmx:Edmx>

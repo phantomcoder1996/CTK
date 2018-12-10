@@ -1,0 +1,4 @@
+action=install
+assemblypath=D:\CDTK\CTK.exe
+installtype=notransaction
+logfile=

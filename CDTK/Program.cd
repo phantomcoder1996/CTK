@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CTK.Data.CTKDBDataSet" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAwBAAEPABAAAQAIAAAwCQBgCAAAAABEABBA=</HashCode>
+      <FileName>Data\CTKDBDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.MainForm" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAqCAjURCDKQARgBAqCEQkAGAQgoAggBQGAgCABAACE=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.Program" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAQEMAEAAAAAAAQAQBEAAIARSAIAYEAAEACCAAAYA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAAAAAAAAAAAAAAAIAAAAIABAAAAAAQCAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.Tools.DBExportSecreteNumbersForms" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQBJaAgCCABBcKIAiMYiQTCAgQIAQsYGAAADQBKEA=</HashCode>
+      <FileName>Tools\DBExportSecreteNumbersForms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.Tools.DBImportExamMarkedForms" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAIASEACAAAAAAAAGAAAACAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Tools\DBImportExamMarkedForms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.Tools.DBImportMasterForms" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAASAACBoAAAABAGAAAACAAAEAACABAAAAAABAAA=</HashCode>
+      <FileName>Tools\DBImportMasterForms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.Tools.ExportMarkRegForms" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQBoIAgSAABAMCKACEIAASAAgIAAAEYEAAACQBCAA=</HashCode>
+      <FileName>Tools\ExportMarkRegForms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.BL">
+    <Position X="8" Y="0.5" Width="4" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="CTK.BL.StudentCard" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BL.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="CTK.BL.CourseCard" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BL.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IDAAooIACIgKBiiIAkgwEIAAIgAAEECAAiIhCCgQAIo=</HashCode>
+      <FileName>BL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTK.CTKInstaller">
+    <Position X="16" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAGAACAAAACAACAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>CTKInstaller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

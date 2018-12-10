@@ -1,0 +1,20 @@
+﻿1, The output file type isn't the same from all DRs,I think this has something to do with the bug that appears when saving the file.The message that says" there's an existing file with the name XXXXXXXX do you want t replace? "
+
+-2, We need to add course name next to course code in the drop down list when using barcode.
+
+3, we need to avoid accidentally writing in the table inside the text area that contains the names and grades of students.I suggest using a radio button to toggle on and off this feature. 
+
+4, The running excel process that remains open in background.we need to kill it when closing the program.
+
+5, we need to add password protection to barcode generating section.
+
+6, disable input from barcode unless the button is green if possible. to avoid writing anywhere in the open window.
+
+7, Concerning barcode generation algorithm. First generate unique random number for every new course then generate then within each course generate unique random number for each student.this will reduce generation time significantly.
+
+8,  add exam date to the sticker containing student info.
+9, Print selected pages
+-10, Case of mismatch during grade entry, put it something else of -1 to avoid wrong match results
+11, Export Secrete numbers should allow search by course code or course name as well as the ordinary navigation
+12, Modify the title bar of all forms to be user friendly in Arabic
+-13, Add notify message when you load database. May be also some visual effect like new color for database cylinders 

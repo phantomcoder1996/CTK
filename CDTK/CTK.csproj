@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7A1AE1A-0733-4FD4-ABAD-27A800458753}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CTK</RootNamespace>
+    <AssemblyName>CTK</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Write.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib, Version=1.0.0.14, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DDCL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\DDCL.dll</HintPath>
+    </Reference>
+    <Reference Include="DDEX-Deserialiser, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DDEX-Deserialiser.3.7.0.0\lib\net40\DDEX-Deserialiser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact.Legacy, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.Legacy.6.1.3\lib\net40\EntityFramework.SqlServerCompact.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EOB, Version=1.5.3.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalReferences\EOB.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>ExternalReferences\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.5\Desktop\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft SQL Server Compact Edition\v3.5\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BARCODE.cs">
+      <DependentUpon>CTKDB_NM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BL.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Controls\ExamGradeCompiler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ExamGradeCompiler.Designer.cs">
+      <DependentUpon>ExamGradeCompiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Courses.cs">
+      <DependentUpon>CTKDB_NM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourseStatus.cs" />
+    <Compile Include="CTKDB_NM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTKDB_NM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTKDB_NM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTKDB_NM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTKDB_NM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTKDB_NM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CTKInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CTKInstaller.Designer.cs">
+      <DependentUpon>CTKInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL.cs" />
+    <Compile Include="Data\CTKDBDataSet.cs">
+      <DependentUpon>CTKDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CTKDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTKDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\InternalDS.cs">
+      <DependentUpon>InternalDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\InternalDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\KeyEntryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\KeyEntryDialog.Designer.cs">
+      <DependentUpon>KeyEntryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DLGPrintBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DLGPrintBarCode.Designer.cs">
+      <DependentUpon>DLGPrintBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\GradeLimits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\GradeLimits.Designer.cs">
+      <DependentUpon>GradeLimits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SecreteNumbersEntryDLG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SecreteNumbersEntryDLG.Designer.cs">
+      <DependentUpon>SecreteNumbersEntryDLG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master.cs">
+      <DependentUpon>CTKDB_NM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultStatus.cs">
+      <DependentUpon>CTKDB_NM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Students.cs">
+      <DependentUpon>CTKDB_NM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\BarCodeReaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\BarCodeReaderForm.Designer.cs">
+      <DependentUpon>BarCodeReaderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\DBExamImportUsingBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\DBExamImportUsingBarCode.Designer.cs">
+      <DependentUpon>DBExamImportUsingBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\DBExportSecreteNumbersForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\DBExportSecreteNumbersForms.Designer.cs">
+      <DependentUpon>DBExportSecreteNumbersForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\DBImportExamMarkedForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\DBImportExamMarkedForms.Designer.cs">
+      <DependentUpon>DBImportExamMarkedForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\DBImportMasterForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\DBImportMasterForms.Designer.cs">
+      <DependentUpon>DBImportMasterForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\DB_MISImportList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\DB_MISImportList.Designer.cs">
+      <DependentUpon>DB_MISImportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ExportExamsheetEX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ExportExamsheetEX.Designer.cs">
+      <DependentUpon>ExportExamsheetEX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ExportExamSheets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ExportExamSheets.Designer.cs">
+      <DependentUpon>ExportExamSheets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ExportFinalMarkForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ExportFinalMarkForms.Designer.cs">
+      <DependentUpon>ExportFinalMarkForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ExportMarkRegForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ExportMarkRegForms.Designer.cs">
+      <DependentUpon>ExportMarkRegForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\MonitorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\MonitorForm.Designer.cs">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VER.cs">
+      <DependentUpon>CTKDB_NM.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ExamGradeCompiler.resx">
+      <DependentUpon>ExamGradeCompiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\KeyEntryDialog.resx">
+      <DependentUpon>KeyEntryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DLGPrintBarCode.resx">
+      <DependentUpon>DLGPrintBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\GradeLimits.resx">
+      <DependentUpon>GradeLimits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SecreteNumbersEntryDLG.resx">
+      <DependentUpon>SecreteNumbersEntryDLG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Tools\BarCodeReaderForm.resx">
+      <DependentUpon>BarCodeReaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\DBExamImportUsingBarCode.resx">
+      <DependentUpon>DBExamImportUsingBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\DBExportSecreteNumbersForms.resx">
+      <DependentUpon>DBExportSecreteNumbersForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\DBImportExamMarkedForms.resx">
+      <DependentUpon>DBImportExamMarkedForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\DBImportMasterForms.resx">
+      <DependentUpon>DBImportMasterForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\DB_MISImportList.resx">
+      <DependentUpon>DB_MISImportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ExportExamsheetEX.resx">
+      <DependentUpon>ExportExamsheetEX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ExportExamSheets.resx">
+      <DependentUpon>ExportExamSheets.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ExportFinalMarkForms.resx">
+      <DependentUpon>ExportFinalMarkForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ExportMarkRegForms.resx">
+      <DependentUpon>ExportMarkRegForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\MonitorForm.resx">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Controls\ExamGradeCompiler.cd" />
+    <EntityDeploy Include="CTKDB_NM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CTKDB_NM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CTKDB_NMedmx.diagram">
+      <DependentUpon>CTKDB_NM.edmx</DependentUpon>
+    </None>
+    <None Include="EULA.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Lab\1-30.xls" />
+    <None Include="Lab\1-30.xlsx" />
+    <None Include="Lab\1-90.xls" />
+    <None Include="Lab\1-90.xlsx" />
+    <None Include="Lab\11.xls" />
+    <None Include="Lab\11.xlsx" />
+    <None Include="Lab\2-1-30.xls" />
+    <None Include="Lab\2-2-10.xls" />
+    <None Include="Lab\2-50.xls" />
+    <None Include="Lab\2-50.xlsx" />
+    <None Include="Lab\22.xls" />
+    <None Include="Lab\22.xlsx" />
+    <None Include="Lab\3-40.xls" />
+    <None Include="Lab\3-40.xlsx" />
+    <None Include="Lab\3-60.xls" />
+    <None Include="Lab\33.xls" />
+    <None Include="Lab\33.xlsx" />
+    <None Include="Lab\4-1-15.xls" />
+    <None Include="Lab\4-2-15.xls" />
+    <None Include="Lab\4-90.xls" />
+    <None Include="Lab\4-90.xlsx" />
+    <None Include="Lab\44.xls" />
+    <None Include="Lab\44.xlsx" />
+    <None Include="Lab\5-1-30.xls" />
+    <None Include="Lab\5-2-20.xls" />
+    <None Include="Lab\5-40.xls" />
+    <None Include="Lab\5-40.xlsx" />
+    <None Include="Lab\55.xls" />
+    <None Include="Lab\55.xlsx" />
+    <None Include="Lab\6-50.xls" />
+    <None Include="Lab\6-50.xlsx" />
+    <None Include="Lab\66.xls" />
+    <None Include="Lab\66.xlsx" />
+    <None Include="Lab\omar101.pdf" />
+    <None Include="Lab\عمر101التصميم المعماري 1%28ب%29_Final.xlsx" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CTK.Data.CTKDBEntities.datasource" />
+    <None Include="Properties\DataSources\CTKDB_NMEntities.datasource" />
+    <None Include="Tools\DBExamImportUsingBarCode.cd" />
+    <None Include="Data\InternalDS.xsc">
+      <DependentUpon>InternalDS.xsd</DependentUpon>
+    </None>
+    <None Include="Data\InternalDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InternalDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\InternalDS.xss">
+      <DependentUpon>InternalDS.xsd</DependentUpon>
+    </None>
+    <None Include="Dialogs\SecreteNumbersEntryDLG.cd" />
+    <None Include="Main.cd" />
+    <None Include="Data\KeyEntryDialog.cd" />
+    <None Include="Contents\مادة--ريض01 -رياضيات1دفعة اعدادى-الترم الثانى-2008.xls" />
+    <None Include="Contents\مادة-مدن101 -تحليل إنش1دفعة اولى-الترم الثانى-2008.xls" />
+    <None Include="HelpSource\CTKUserGuide.docx" />
+    <Content Include="ClassList.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CTKDB.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="ExternalReferences\BarcodeLib.dll" />
+    <Content Include="CTKDB_NM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CTKDB_NM.Context.cs</LastGenOutput>
+      <DependentUpon>CTKDB_NM.edmx</DependentUpon>
+    </Content>
+    <Content Include="CTKDB_NM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CTKDB_NM.cs</LastGenOutput>
+      <DependentUpon>CTKDB_NM.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\CTKDB.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Database1.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalReferences\DDCL.dll" />
+    <Content Include="ExternalReferences\EOB.dll" />
+    <Content Include="ExternalReferences\EPPlus.dll" />
+    <Content Include="EPPlus.XML">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\CTKUserGuide.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Program.cd" />
+    <None Include="Data\CTKDBDataSet.xsc">
+      <DependentUpon>CTKDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\CTKDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CTKDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\CTKDBDataSet.xss">
+      <DependentUpon>CTKDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TestFiles\مادة--ريض01 رياضيات1 دفعة  اعدادى-تخصص عام-الترم الثانى-201.xlsx" />
+    <None Include="TestFiles\مادة--ريض05الرسم الهندسى دفعة  اعدادى-تخصص عام-الترم الثانى.xlsx" />
+    <None Include="TestFiles\مادة--عام08اللغة الإنجليزية دفعة  اعدادى-تخصص عام-الترم الث.xlsx" />
+    <None Include="TestFiles\مادة--عام08اللغة الإنجليزية دفعة  اعدادى-تخصص عام-الترم الثانى-201.xlsx" />
+    <None Include="TestFiles\مادة--عام09تاريخ دفعة  اعدادى-تخصص عام-الترم الثانى-2011.xlsx" />
+    <None Include="TestFiles\مادة--فيز02 فيزيقا1 دفعة  اعدادى-تخصص عام-الترم الثانى-2011.xlsx" />
+    <None Include="TestFiles\مادة--ميك03 ميكانيكا1 دفعة  اعدادى-تخصص عام-الترم الثانى-20.xlsx" />
+    <None Include="TestFiles\مادة--ميك03 ميكانيكا1 دفعة  اعدادى-تخصص عام-الترم الثانى-201.xlsx" />
+    <None Include="TestFiles\مادة--هنص06تكنولوجيا الإنتاج دفعة  اعدادى-تخصص عام-الترم ال.xlsx" />
+    <None Include="Tools\DBImportMasterForms.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Glossy-Library.ico" />
+    <None Include="Resources\1339766860_edit-clear.png" />
+    <None Include="Resources\1339766842_green05.png" />
+    <None Include="Resources\1339766780_green01.png" />
+    <None Include="Resources\1339766800_green02.png" />
+    <None Include="Resources\1339766812_green03.png" />
+    <None Include="Resources\1339766824_green04.png" />
+    <None Include="Resources\1339766842_green051.png" />
+    <None Include="Resources\1335377193_Help.png" />
+    <None Include="Resources\12829820.jpg" />
+    <None Include="Readings\Links.txt" />
+    <None Include="Resources\About-me-icon.png" />
+    <None Include="Resources\Save-icon.png" />
+    <None Include="Resources\Extract-object-icon.png" />
+    <None Include="Resources\Action-db-remove-icon.png" />
+    <None Include="Resources\englogo %281%29.gif" />
+    <None Include="Resources\LeftLogo31.png" />
+    <None Include="Resources\1357507157_text-x-log.png" />
+    <None Include="Readings\Installkeys.txt" />
+    <None Include="Resources\Apps-utilities-terminal-icon.png" />
+    <None Include="Resources\1367846203_033.png" />
+    <None Include="Resources\1368204713_Preview Docment.png" />
+    <None Include="Resources\view-32.png" />
+    <None Include="Resources\SDUFULogo.png" />
+    <None Include="Resources\1394383393_Test-paper-32.png" />
+    <None Include="Resources\1394383647_38.png" />
+    <None Include="Resources\1394383570_Erase.png" />
+    <None Include="Resources\1394383745_Warning.png" />
+    <None Include="Resources\1394384343_floppy_disk_save.png" />
+    <Content Include="ToDoList.txt" />
+    <Content Include="WhatsNew.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Write.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SSCE">
+      <Guid>{CE4AACFA-3CFD-4028-B2D9-F272314F07C8}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

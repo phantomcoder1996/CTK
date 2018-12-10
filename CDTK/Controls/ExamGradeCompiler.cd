@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CTK.Controls.ExamGradeCompiler">
+    <Position X="0.5" Y="0.5" Width="5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="CTK.Controls.ExamGradeCompiler.AcademicYearOptions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\ExamGradeCompiler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="CTK.Controls.ExamGradeCompiler.DepartmentOptions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\ExamGradeCompiler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="CTK.Controls.ExamGradeCompiler.AcademicClassOptions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\ExamGradeCompiler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Delegate Name="CTK.Controls.ExamGradeCompiler.LogMessages" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\ExamGradeCompiler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AKIAAAQACCAEABAAAIDCAqBGAAsAABRCGAAEARDACIA=</HashCode>
+      <FileName>Controls\ExamGradeCompiler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

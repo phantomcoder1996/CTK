@@ -1,0 +1,30 @@
+﻿Version 2.0.0.3
+
+Version 1.0.7.6
+In Barcode entry form the following issues are resolved
+- First and second Mark Entries is zero for attendance with type absent in case of manual entries 
+Version 1.0.7.5
+Fixing problem in Database migrate while installation
+Version 1.0.7.4
+The installer is enhanced to allow database migration instead of replacing the installed database.
+Version 1.0.7.3
+Import Grades using bar code form contains the following enhancements 
+- Fixing the bug encountered when loading the file during Exam Grade import. 
+- Prevent not intentionally loading new course if there is loaded course with entries.
+- Preventing editing in the text area of the combo box which contains the list of available courses
+
+Version 1.0.7.0
+
+Version 1.0.6.1
+Release Date: 18/5/2013
+- Adjust the print size for BarCode for label size 105x36 mm
+- Fixing the problem of reading excel file in 64-bit windows
+- Fixing the problem of database reset in case of importing files for new course while they are previously entered. 
+Prospect
+- Announce before leaving Grade entry using barcode
+Version 1.0.5
+Release Date: 6/1/2013
+- Delete course from Database 
+- Manual Secrete number is supported by two separate data entry as well as matching the two separate entries
+- Ability to save Log  from the main screen.
+- Enhanced Excel operation.

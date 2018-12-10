@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CTKDB_NMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CTKDB_NMEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="BARCODE" EntityType="CTKDB_NMModel.BARCODE" />
+    <EntitySet Name="Courses" EntityType="CTKDB_NMModel.Courses" />
+    <EntitySet Name="Master" EntityType="CTKDB_NMModel.Master" />
+    <EntitySet Name="ResultStatus" EntityType="CTKDB_NMModel.ResultStatus" />
+    <EntitySet Name="Students" EntityType="CTKDB_NMModel.Students" />
+    <EntitySet Name="VER" EntityType="CTKDB_NMModel.VER" />
+  </EntityContainer>
+  <EntityType Name="BARCODE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="BC" Type="String" MaxLength="11" Unicode="true" FixedLength="false" />
+    <Property Name="HSID" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
+    <Property Name="HCID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MaximumExam" Type="Int32" />
+    <Property Name="MaximumClass" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MISFileID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Master">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="StudentID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ExamMark" Type="Int32" />
+    <Property Name="SSID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MISID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ResultStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Class" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Department" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ActivityStatus" Type="Boolean" />
+    <Property Name="FinalStatus" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Class" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AcademicYear" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="StudentID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="AcademicClass" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="VER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Major" Type="Int32" Nullable="false" />
+    <Property Name="Minor" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

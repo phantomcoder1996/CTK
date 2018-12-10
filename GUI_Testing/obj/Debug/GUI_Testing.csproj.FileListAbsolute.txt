@@ -1,0 +1,7 @@
+C:\Users\Univ\Downloads\CTK\GUI_Testing\bin\Debug\GUI_Testing.dll.config
+C:\Users\Univ\Downloads\CTK\GUI_Testing\bin\Debug\GUI_Testing.dll
+C:\Users\Univ\Downloads\CTK\GUI_Testing\bin\Debug\GUI_Testing.pdb
+C:\Users\Univ\Downloads\CTK\GUI_Testing\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Univ\Downloads\CTK\GUI_Testing\obj\Debug\GUI_Testing.dll
+C:\Users\Univ\Downloads\CTK\GUI_Testing\obj\Debug\GUI_Testing.pdb
+C:\Users\Univ\Downloads\CTK\GUI_Testing\obj\Debug\GUI_Testing.csprojResolveAssemblyReference.cache
