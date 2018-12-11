@@ -12,7 +12,7 @@ namespace CTK.Tools.Tests
     public class DBImportMasterFormsTests
     {
 
-        //@Mariam Maher
+        //Tester : @Mariam Maher
         //input = "Check file name, it should be in the standard format مادة--ريض01 -رياضيات1دفعة اعدادى-الترم الثانى-2008"
         //expected = [ ريض01, رياضيات1دفعة اعدادى  ,الترم الثانى,2008] array of 4 elements
         [TestMethod()]

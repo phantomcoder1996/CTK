@@ -30,6 +30,7 @@ namespace CTK.Tests
 
         }
 
+
         [TestMethod()]
         public void NormalizeTest()
         {
