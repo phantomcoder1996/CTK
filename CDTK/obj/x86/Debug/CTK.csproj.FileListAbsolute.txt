@@ -47,4 +47,3 @@ C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\EntityFramework.SqlServerCompact.Lega
 C:\Users\Univ\Downloads\CTK\CDTK\obj\x86\Debug\CTK.exe
 C:\Users\Univ\Downloads\CTK\CDTK\obj\x86\Debug\CTK.pdb
 C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\Univ\Downloads\CTK\CDTK\obj\x86\Debug\CTK.csprojResolveAssemblyReference.cache

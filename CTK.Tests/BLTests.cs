@@ -78,21 +78,87 @@ namespace CTK.Tests
 
         }
 
+
+
+
+
+
+
+
+
+        //Tester: @ Mariam Maher
+        //Expected output : Filled Master table
+        [TestMethod()]
+        public void GetMasterTableTest()
+        {
+            Assert.Fail();
+        }
+
+        //Tester: @Reem AbdElSalam
+
+        [TestMethod()]
+        public void GetMasterRowBySSIDTest()
+        {
+
+
+            //TODO : create a function that creates a fake database similar to the function that I created above (createFakeDatabase),but for the master table
+
+            Assert.Fail();
+        }
+
+        //Tester: @Hagar Hosny 
+        [TestMethod()]
+        public void IsNULLSSIDTest()
+        {
+
+            Assert.Fail();
+        }
+
+        //Tester: @Mariam Maher
+        [TestMethod()]
+        public void GetCourseCodeTest()
+        {
+            //Input = "ريض:10"
+            //expected output = "ريض"
+
+            Assert.Fail();
+        }
+
+        //Tester: @Reem AbdelSalam 
+        //Note: Deal with msg boxes inside the function in the same way I did in ReviewFinalChanges
+        [TestMethod()]
+        public void ApproveEditSecreteNumbersTest()
+        {
+            Assert.Fail();
+        }
+
+
+        //Tester: @Hagar Hosny
+        // You may need to use the function that creates fake tables that is created by Reem AbdelSalam
         [TestMethod()]
         public void RemoveCourseTest()
         {
             Assert.Fail();
-
-
-
         }
 
+ 
+    }
 
+    //Tester: @Reem Amr
 
-        private CTK.Data.InternalDS createFakeInternalDataBase()
+    [TestClass()]
+    public class ReviewFinalMarksTestClass
+    {
+
+        CTK.Data.InternalDS internalDS;
+        bool no_missing_entries;
+        bool no_mismatch;
+        bool attendence_registered;
+        static Mock<CTK.IMessageBoxWrapper> messageBoxMock;
+        private void createFakeInternalDataBase()
         {
 
-            CTK.Data.InternalDS internalDS = new CTK.Data.InternalDS();
+           internalDS = new CTK.Data.InternalDS();
 
 
             DataTable dt = new DataTable();
@@ -206,60 +272,58 @@ namespace CTK.Tests
             }
             internalDS.MarkEntryTable.AcceptChanges();
 
-            return internalDS;
+           
         }
 
 
+        [ClassInitialize()]
+        public static void createMockMessageBox(TestContext context)
+        {
 
-        //Tester : @Reem Gody
-        //=====================
+
+            messageBoxMock = new Mock<CTK.IMessageBoxWrapper>();
+            messageBoxMock.Setup(n => n.Show(It.IsAny<string>(), It.IsAny<string>(), MessageBoxButtons.OK, MessageBoxIcon.Stop));
+        }
+
+
+        [TestInitialize()]
+        public void initializeFakeInternalDS()
+        {
+
+            Console.Write("Test initialize called");
+            createFakeInternalDataBase();
+
+
+        }
+
+        //Test1: First entry or second entry is NULL
+        //expected output : no_missing_entries = false
+        //================================================
+
 
         [TestMethod()]
-
-        public void ReviewFinalMarksTest()
+        public void ReviewFinalMarksTest_null_entries()
         {
-            CTK.Data.InternalDS internalDS = createFakeInternalDataBase();
-
-            var cnt = internalDS.MarkEntryTable.Count();
-            Console.Write(cnt);
-
-            bool no_missing_entries = true;
-            bool no_mismatch = true;
-            bool attendence_registered = true;
-
-
-            //First : Mock the message box 
-            //==============================
-
-            Mock<CTK.IMessageBoxWrapper> messageBoxMock = new Mock<CTK.IMessageBoxWrapper>();
-            messageBoxMock.Setup(n => n.Show(It.IsAny<string>(), It.IsAny<string>(), MessageBoxButtons.OK, MessageBoxIcon.Stop));
-
-
-
-
-
-
-            //-------------------------------------------------------------------------------
-
-            //Test1: First entry or second entry is NULL
-            //expected output : no_missing_entries = false
-            //================================================
-
+            no_missing_entries = true;
+            no_mismatch = true;
+            attendence_registered = true;
             BL.ReviewFinalMarks("ريض10", ref no_missing_entries, ref no_mismatch, ref attendence_registered, ref internalDS, messageBoxMock.Object);
-
             Assert.AreEqual(false, no_missing_entries); //Report bug
+        }
 
-            //--------------------------------------------------------------------------------------
 
-            //Test2: First entry and second entry are equal
-            //expected output : no_mismatch = true
-            //===================================================
+        //Test2: First entry and second entry are equal
+        //expected output : no_mismatch = true
+        //===================================================
+        [TestMethod()]
 
+        public void ReviewFinalMarksTest_matching_entries()
+        {
 
             no_mismatch = false;
             no_missing_entries = true;
 
-
+            
 
             CTK.Data.InternalDS.MarkEntryTableRow m = internalDS.MarkEntryTable.NewMarkEntryTableRow();
             m.CourseCode = "ريض10";
@@ -276,18 +340,21 @@ namespace CTK.Tests
 
             Assert.AreEqual(true, no_mismatch);
             Assert.AreEqual(false, no_missing_entries); //Report bug
-            //--------------------------------------------------------------------------------------------
+        }
 
-            //Test3: First entry and second entry are not equal
-            //expected output : no mismatch = false
-            //===================================================
 
+        //Test3: First entry and second entry are not equal
+        //expected output : no mismatch = false
+        //===================================================
+        [TestMethod()]
+        public void ReviewFinalMarksTest_non_matching_entries()
+        {
 
 
             no_mismatch = true;
             no_missing_entries = true;
 
-
+            CTK.Data.InternalDS.MarkEntryTableRow m = internalDS.MarkEntryTable.NewMarkEntryTableRow();
             m = internalDS.MarkEntryTable.NewMarkEntryTableRow();
             m.CourseCode = "ريض10";
             m.SecondEntry = 100;
@@ -304,16 +371,19 @@ namespace CTK.Tests
             Assert.AreEqual(false, no_mismatch);
             Assert.AreEqual(false, no_missing_entries); //Report bug
 
+        }
 
 
-            //Test4: One of the two entries is less than 0
-            //expected output: no missingentries = false
-            //===============================================
-
+        //Test4: One of the two entries is less than 0
+        //expected output: no missingentries = false
+        //===============================================
+        [TestMethod()]
+        public void ReviewFinalMarksTest_negative_entry()
+        {
             no_mismatch = true;
             no_missing_entries = true;
 
-
+            CTK.Data.InternalDS.MarkEntryTableRow m = internalDS.MarkEntryTable.NewMarkEntryTableRow();
             m = internalDS.MarkEntryTable.NewMarkEntryTableRow();
             m.CourseCode = "ريض10";
             m.SecondEntry = -100;
@@ -327,72 +397,86 @@ namespace CTK.Tests
             BL.ReviewFinalMarks("ريض10", ref no_missing_entries, ref no_mismatch, ref attendence_registered, ref internalDS, messageBoxMock.Object);
 
             Assert.AreEqual(false, no_mismatch);
-            Assert.AreEqual(false, no_missing_entries); //Report bug
-
-
+            Assert.AreEqual(false, no_missing_entries); 
         }
 
 
-        //Tester: @ Mariam Maher
-        //Expected output : Filled Master table
-        [TestMethod()]
-        public void GetMasterTableTest()
-        {
-            Assert.Fail();
-        }
+    }
 
-        //Tester: @Reem AbdElSalam
 
-        [TestMethod()]
-        public void GetMasterRowBySSIDTest()
+
+
+    //Tester: @Reem Amr
+    //Coverage criteria : EC
+    //------------------------
+
+    [TestClass()]
+    public class ExamMarkedSchemaValidation 
         {
 
-
-            //TODO : create a function that creates a fake database similar to the function that I created above (createFakeDatabase),but for the master table
-
-            Assert.Fail();
-        }
-
-        //Tester: @Hagar Hosny 
-        [TestMethod()]
-        public void IsNULLSSIDTest()
+        DataTable dt;
+        [TestInitialize()]
+        public void createTable()
         {
-
-            Assert.Fail();
+            dt = new DataTable();
         }
 
-        //Tester: @Mariam Maher
+
+
+
+        //Input: Data table with two columns (الرقم السري - درجة التحريري)
+        //expected output : res=True
         [TestMethod()]
-        public void GetCourseCodeTest()
+        public void ValidateExamMarkedSchemaTest_validtable()
         {
-            //Input = "ريض:10"
-            //expected output = "ريض"
+            DataColumn col = new DataColumn();
+            col.ColumnName = "درجة التحريري";
+            dt.Columns.Add(col);
+            col = new DataColumn();
+            col.ColumnName = "الرقم السري";
+            dt.Columns.Add(col);
 
-            Assert.Fail();
+            bool res = BL.ValidateExamMarkedSchema(dt);
+            Assert.AreEqual(true, res);
         }
 
-        //Tester: @Reem AbdelSalam 
-        //Note: Deal with msg boxes inside the function in the same way I did in ReviewFinalChanges
+
+        //Input: Data table with three columns (الرقم السري - درجة التحريري-المجموع)
+        //expected output : res=false
         [TestMethod()]
-        public void ApproveEditSecreteNumbersTest()
+        public void ValidateExamMarkedSchemaTest_invalidtable_wrongcolcnt()
         {
-            Assert.Fail();
+            DataColumn col = new DataColumn();
+            col.ColumnName = "درجة التحريري";
+            dt.Columns.Add(col);
+            col = new DataColumn();
+            col.ColumnName = "الرقم السري";
+            dt.Columns.Add(col);
+            col = new DataColumn();
+            col.ColumnName = "المجموع";
+            dt.Columns.Add(col);
+
+            bool res = BL.ValidateExamMarkedSchema(dt);
+            Assert.AreEqual(false, res);
         }
 
 
-        //Tester: @Hagar Hosny
-        // You may need to use the function that creates fake tables that is created by Reem AbdelSalam
+        //Input: Data table with two columns ( درجة التحريري-المجموع)
+        //expected output : res=false
         [TestMethod()]
-        public void RemoveCourseTest1()
+        public void ValidateExamMarkedSchemaTest_invalidtable_correctcnt_wronglabel()
         {
-            Assert.Fail();
+            DataColumn col = new DataColumn();
+            col.ColumnName = "درجة التحريري";
+            dt.Columns.Add(col);
+ 
+            col = new DataColumn();
+            col.ColumnName = "المجموع";
+            dt.Columns.Add(col);
+
+            bool res = BL.ValidateExamMarkedSchema(dt);
+            Assert.AreEqual(false, res);
         }
 
-        //Tester: @Reem Amr
-        [TestMethod()]
-        public void ValidateExamMarkedSchemaTest()
-        {
-            Assert.Fail();
-        }
     }
 }

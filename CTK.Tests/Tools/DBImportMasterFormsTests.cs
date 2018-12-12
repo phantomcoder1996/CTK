@@ -13,7 +13,7 @@ namespace CTK.Tools.Tests
     {
 
         //Tester : @Mariam Maher
-        //input = "Check file name, it should be in the standard format مادة--ريض01 -رياضيات1دفعة اعدادى-الترم الثانى-2008"
+        //input = " مادة--ريض01 -رياضيات1دفعة اعدادى-الترم الثانى-2008"
         //expected = [ ريض01, رياضيات1دفعة اعدادى  ,الترم الثانى,2008] array of 4 elements
         [TestMethod()]
         public void GetCourseInformationTest()
