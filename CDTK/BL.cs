@@ -79,7 +79,8 @@ namespace CTK
         }
 
 
-        public static void ReviewFinalMarks(string CourseCode, ref bool m_bNoMissingentries,ref bool m_bNoMismatch,ref bool m_bAttendanceRegistred,ref CTK.Data.InternalDS internalDS,IMessageBoxWrapper MessageBox)
+        public static void ReviewFinalMarks(string CourseCode, ref bool m_bNoMissingentries,ref bool m_bNoMismatch,ref bool m_bAttendanceRegistred
+            ,ref CTK.Data.InternalDS internalDS,IMessageBoxWrapper MessageBox)
         {
             try
             {
@@ -112,15 +113,9 @@ namespace CTK
                 }
                 else
                 {
-                    m_bNoMissingentries = true;
-
-                }
+                    m_bNoMissingentries = true;}
                 #endregion
-
-
                 #region Check Logic Values
-
-
                 buffer = internalDS.MarkEntryTable.Select("Firstentry < 0 or SecondEntry < 0");
 
                 if (buffer.Length > 0)
@@ -135,15 +130,10 @@ namespace CTK
                 else
                 {
                     m_bNoMissingentries = true;
-
-                }
+                 }
 
                 #endregion
-
-
-
                 #region Review for Mark mismatch
-
                 buffer = internalDS.MarkEntryTable.Select("Firstentry <> SecondEntry ");
                 if (buffer.Length > 0)
                 {
