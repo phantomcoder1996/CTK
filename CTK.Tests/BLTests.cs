@@ -78,14 +78,7 @@ namespace CTK.Tests
 
         }
 
-
-
-
-
-
-
-
-
+        
         //Tester: @ Mariam Maher
         //Expected output : Filled Master table
         [TestMethod()]
@@ -478,5 +471,55 @@ namespace CTK.Tests
             Assert.AreEqual(false, res);
         }
 
+    }
+
+    //Tester: @Mariam Maher
+    //-----------------------
+
+    [TestClass()]
+    public class courseCode
+    {
+
+        [TestMethod()]
+        public void GetCourseCodeTest1()
+        {
+            //Input = "ريض:10"
+            //expected output = "ريض"
+            string test = "تستنج:402";
+            string expected = "تستنج";
+            string output = BL.GetCourseCode(test);
+            Assert.AreEqual(expected,output);
+        }
+
+        [TestMethod()]
+        public void GetCourseCodeTest2()
+        {
+            //Input = "ريض:10"
+            //expected output = "ريض"
+            string test = "تستنج";
+            bool exceptionThrown = false;
+            try
+            {
+                string output = BL.GetCourseCode(test);
+            }
+            catch(Exception exception)
+            {
+                exceptionThrown = true;
+            }
+            Assert.IsTrue(exceptionThrown);
+        }
+
+        [TestMethod()]
+        public void GetCourseCodeTest3()
+        {
+            //Input = "ريض:10"
+            //expected output = "ريض"
+            string test = "تستنج:402:505";
+            string expected = "تستنج";
+            string output = BL.GetCourseCode(test);
+
+            Assert.AreEqual(expected,output);
+  
+        }
     }
 }
