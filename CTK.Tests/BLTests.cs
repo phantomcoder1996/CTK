@@ -103,8 +103,32 @@ namespace CTK.Tests
         [TestMethod()]
         public void IsNULLSSIDTest()
         {
+            //this function checks if the courseCode is null -> not in the database 
+            //return true if the course code not in the database 
+            //return false if the course in the database 
 
-            Assert.Fail();
+            //case1:the code is not in the database and the function returns false (right)
+            //case2:the code is not in the database and the function returns true (wrong)
+            string input = "1011";
+            bool expected = false;
+            bool actual = BL.IsNULLSSID(input);
+            Assert.AreEqual(expected, actual);
+
+            //case3: the code is in the database and SSID!=null 
+            //and the function returns false (right)
+            //case4: the code is in the database and SSID!=null 
+            //and the function returns ture (wrong)
+            input = "100";
+            expected = false;
+            actual = BL.IsNULLSSID(input);
+            Assert.AreEqual(expected, actual);
+
+            //case5: the code is in the database and SSID=null and the function returns true (right)
+            //case6: the code is in the database and SSID=null and the function returns false (wrong)
+            input = "101";
+            expected = true;
+            actual = BL.IsNULLSSID(input);
+            Assert.AreEqual(expected, actual);
         }
 
         //Tester: @Mariam Maher
@@ -131,6 +155,15 @@ namespace CTK.Tests
         [TestMethod()]
         public void RemoveCourseTest()
         {
+            //case1:the first record removed and the second one didn't and the result false
+
+            //case2:the 2 records removed & return true
+
+            //case3:the 2 records isn't removed & return fasle
+
+            //case4:the first is not removed & the second one removed & return true
+
+
             Assert.Fail();
         }
 

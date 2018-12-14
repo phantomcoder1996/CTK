@@ -94,3 +94,8 @@ E:\testing\CTK\CDTK\obj\x86\Debug\CTK.Tools.ExportToMIS.resources
 E:\testing\CTK\CDTK\obj\x86\Debug\CTK.Tools.ExportMarkRegForms.resources
 E:\testing\CTK\CDTK\obj\x86\Debug\CTK.Tools.MonitorForm.resources
 E:\testing\CTK\CDTK\obj\x86\Debug\CTK.csproj.GenerateResource.Cache
+F:\fourth_year\Testing\CTK_Project\CTK\CDTK\bin\Debug\CTK.exe.config
+F:\fourth_year\Testing\CTK_Project\CTK\CDTK\obj\x86\Debug\Interop.SSCE.dll
+F:\fourth_year\Testing\CTK_Project\CTK\CDTK\obj\x86\Debug\CTK.csproj.ResolveComReference.cache
+F:\fourth_year\Testing\CTK_Project\CTK\CDTK\obj\x86\Debug\CTK.exe
+F:\fourth_year\Testing\CTK_Project\CTK\CDTK\obj\x86\Debug\CTK.pdb
