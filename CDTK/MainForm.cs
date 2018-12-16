@@ -32,7 +32,11 @@ namespace CTK
         }
         private void Test()
         {
-            //BL.DBInstallerDBMigrate(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\CTKDB.sdf", "");
+            string cs = "Data Source=" + System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\CTKDB.sdf";
+           // string cs = "Data Source=" + System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\data\CTKDB.sdf";
+            System.Data.SqlServerCe.SqlCeEngine se = new System.Data.SqlServerCe.SqlCeEngine(cs);
+            se.Upgrade();
+           // BL.DBInstallerDBMigrate(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + @"\CTKDB.sdf", "");
         }
         void EOBLog_LogMessage(object Sender, params string[] Message)
         {

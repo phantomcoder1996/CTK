@@ -141,7 +141,11 @@ namespace CTK.Tests
             Assert.Fail();
         }
 
- 
+        [TestMethod()]
+        public void MapMasterToBasicSecreteNumberTableTest()
+        {
+            Assert.Fail();
+        }
     }
 
     //Tester: @Reem Amr

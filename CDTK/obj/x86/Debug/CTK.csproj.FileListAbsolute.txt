@@ -39,7 +39,6 @@ C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\EntityFramework.SqlServerCompact.Legacy.dll
 C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\EOB.dll
 C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\EPPlus.dll
-C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\System.Data.SqlServerCe.Entity.dll
 C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\DDEX-Deserialiser.pdb
 C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\EntityFramework.xml
 C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\EntityFramework.SqlServer.xml
@@ -47,3 +46,4 @@ C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\EntityFramework.SqlServerCompact.Lega
 C:\Users\Univ\Downloads\CTK\CDTK\obj\x86\Debug\CTK.exe
 C:\Users\Univ\Downloads\CTK\CDTK\obj\x86\Debug\CTK.pdb
 C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Univ\Downloads\CTK\CDTK\obj\x86\Debug\CTK.csprojResolveAssemblyReference.cache
