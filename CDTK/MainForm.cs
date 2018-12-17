@@ -27,7 +27,7 @@ namespace CTK
            // BL.DBInstallerPre();
            
 #if DEBUG
-            Test(); 
+           // Test(); 
 #endif
         }
         private void Test()

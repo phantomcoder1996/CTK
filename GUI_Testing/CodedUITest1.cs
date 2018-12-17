@@ -53,9 +53,7 @@ namespace GUI_Testing
         [TestMethod]
         public void TestMainScenario()
         {
-         
-            var appPath = @"C:\Users\Univ\Downloads\CTK\CDTK\bin\Debug\CTK.exe";
-            var app = ApplicationUnderTest.Launch(appPath);
+            var app = ApplicationUnderTest.Launch(Globals.appPath);
             AppMainWindow mainwindow = new  AppMainWindow(app);
             mainwindow.selectImportMasterFormsButton();
         }
